@@ -1,0 +1,19 @@
+package com.kh.noice.service;
+
+import static com.kh.common.JDBCTemplate.*;
+
+import java.sql.Connection;
+
+import com.kh.noice.model.dao.NoticeDao;
+
+public class NoticeService {
+	
+	public int selectListCount(){
+		Connection conn = getConnection();
+		int result = new NoticeDao().selectListCount(conn);
+		
+		close(conn);
+		return result;
+	}
+
+}

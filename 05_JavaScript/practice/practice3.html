@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>회원가입</legend>
+        아이디 : <input type="text" id="userId" onkeydown="checkID(this)"> 
+        <span id="idMessage"></span>
+        <br>
+        비밀번호 : <input type="password" id="userpwd"> <br>
+        비밀번호 확인 : <input type="password" id="checkPwd" onblur="checkPWD()">
+        <span id="pwdMessage"></span> <br>
+        이름 : <input type="text" id="name"> <br>
+        <input type="submit" value="회원가입">
+    </fieldset>
+    </form>
+
+    <script>
+        function checkID(_this){
+            let userID = _this.value;
+            let message = document.getElementById('idMessage');
+
+            if(userID === "user01"){
+                message.style.color = 'red';
+                message.innerHTML = "이미 존재하는 아이디입니다."
+            } else{
+                message.style.color = "green";
+                message.innerHTML = "사용 가능한 아이디입니다."
+            }
+        }
+
+        function checkPWD(){
+            /*
+                비밀번호와 비밀번호 확인값을 비교
+                비교결과가 같으면 초 다르면 빨
+            */
+           const userPWD = document.getElementById('userpwd').value;
+           const checkPWD = document.getElementById('checkPwd').value;
+           let message = document.getElementById('pwdMessage');
+           if(userPWD !== checkPWD){
+                message.style.color = 'red';
+                message.innerHTML = "비밀번호가 일치하지 않습니다."
+            } else{
+                message.style.color = "green";
+                message.innerHTML = "비밀번호가 일치합니다."
+            }
+        }
+
+    </script>
+</body>
+</html>

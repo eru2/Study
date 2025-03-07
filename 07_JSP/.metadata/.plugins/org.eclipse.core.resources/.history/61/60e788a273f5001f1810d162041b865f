@@ -1,0 +1,48 @@
+package com.kh.board.controller;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+import org.apache.commons.fileupload2.jakarta.JakartaServletFileUpload;
+
+/**
+ * Servlet implementation class BoardInsertController
+ */
+@WebServlet("/insert.bo")
+public class BoardInsertController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public BoardInsertController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//enctype이 multipart/form-data일 때 request로 값 추출이 불가
+		//		System.out.println(request.getParameter("title"));
+//		System.out.println(request.getParameter("upfile"));
+
+		//encype이 multipart/form-data로 전송되었는지 체크
+		System.out.println(JakartaServletFileUpload.isMultipartContent(request);
+);	
+}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

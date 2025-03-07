@@ -1,0 +1,11 @@
+package com.kh.noice.model.dao;
+
+import java.sql.Connection;
+
+public class NoticeDao {
+	
+	public int selectListCount(Connection conn) {
+		return 0;
+	}
+
+}

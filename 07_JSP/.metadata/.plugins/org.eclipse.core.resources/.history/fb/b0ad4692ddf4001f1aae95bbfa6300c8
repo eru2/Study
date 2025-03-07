@@ -1,0 +1,11 @@
+package com.kh.noice.service;
+
+public class NoticeService {
+	
+	public int selectListCount(){
+		
+		
+		return 0;
+	}
+
+}

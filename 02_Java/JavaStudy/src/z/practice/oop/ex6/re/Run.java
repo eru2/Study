@@ -1,0 +1,14 @@
+package z.practice.oop.ex6.re;
+
+public class Run {
+
+	public static void main(String[] args) {
+		
+		MemberMenu mm = new MemberMenu();
+		mm.mainMenu();
+		
+//		new MemberMenu().mainMenu();
+		
+		
+	}
+}

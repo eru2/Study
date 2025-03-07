@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>취미</legend>
+            <table>
+                <tr>
+                    <td></td>
+                    <label>
+                        <input type="checkbox" value="전체선택" id="checkAll" onchange="allCheck(this)">전체선택
+                    </label>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="종합" onclick="select()">종합
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="소설" onclick="select()">소설
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="시/에세이" onclick="select()">시/에세이
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="경제/경영" onclick="select()">경제/경영
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="자기개발" onclick="select()">자기개발
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="아동" onclick="select()">아동
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="여행"onclick="select()">여행
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="과학" onclick="select()">과학
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="역사/문화" onclick="select()">역사/문화
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="외국어" onclick="select()">외국어
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="컴퓨터" onclick="select()">컴퓨터
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobby" value="만화" onclick="select()">만화
+                        </label>
+                    </td>
+                </tr>
+            </table>
+    </fieldset>
+    </form>
+
+    <button onclick="check()">카테고리 선택</button>
+    <div class="area"></div>
+    <script>
+        function allCheck(selectAll){
+            //전체 선택 체크여부
+            let checked = selectAll.checked;
+
+            //checked -> true : 모든 체크박스를 체크
+            //checked -> false : 모든 체크박스 체크 해제
+            const hobbyCheckBoxList = document.getElementsByName('hobby');
+            for(let box of hobbyCheckBoxList){
+                box.checked = checked;
+            }
+        }
+
+        function isAllChecked(){
+            
+        }
+        function hobbyCheckBoxEvent(){
+            const _allcheckBox = document.getElementById('all-hobby-box');
+            const hobbyCheckBoxList = document.getElementsByName('hobby');
+            for(let box of hobbyCheckBoxList){
+                //모든 체크박스의 체크여부를 확인해서 결과에 따라
+                //all 체크박스의 체크여부를 변경한다.
+                box.onclick = function(){
+
+                }
+            }
+        }
+        hobbyCheckBoxEvent();
+    </script>
+</body>
+
+</html>

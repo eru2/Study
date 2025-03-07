@@ -1,0 +1,6 @@
+package com.kh.mybatis.board.service;
+
+public class BoardServiceImpl implements BoardService{
+	
+	
+}

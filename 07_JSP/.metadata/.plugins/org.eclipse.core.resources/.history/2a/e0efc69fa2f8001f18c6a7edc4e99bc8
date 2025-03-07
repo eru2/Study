@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <style>
+            .outer {
+                background: blanchedalmond;
+                color: black;
+                width: 1000px;
+                margin: auto;
+                margin-top: 50px;
+                padding: 10px 0px 50px;
+            }
+
+            .list-area {
+                border: 1ps solid brown;
+                text-align: center;
+            }
+
+            .list-area td,
+            .list-area th {
+                border: 1px solid brown;
+            }
+
+            .list-area select,
+            .list-area input,
+            .list-area textarea {
+                width: 100%;
+                box-sizing: border-box;
+                color: black;
+            }
+        </style>
+    </head>
+
+    <body>
+				<%@ include file="../common/menubar.jsp" %>
+    </body>
+
+    </html>

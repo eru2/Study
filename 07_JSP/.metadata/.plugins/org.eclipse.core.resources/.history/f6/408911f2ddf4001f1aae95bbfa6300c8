@@ -1,0 +1,15 @@
+package com.kh.noice.service;
+
+import java.sql.Connection;
+import static com.kh.common.JDBCTemplate.*;
+
+public class NoticeService {
+	
+	public int selectListCount(){
+		Connection conn = getConnection();
+		int result = new NoticeDao().selectListCount();
+		
+		return 0;
+	}
+
+}

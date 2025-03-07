@@ -1,0 +1,449 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+input{
+    outline: none;
+}
+
+input[type="button"]{
+    border: none;
+}
+
+ol,ul,li{list-style: none;}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.gb-1{
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+
+#wrapper{
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+#header {
+    width: 100%;
+    height: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    background: white;
+    color: rgba(0, 0, 0, 0.87);
+    z-index: 2; /* 다른 요소 위에 표시 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    display: flex;
+    flex-direction: column; /* 로고와 메뉴를 세로 정렬 */
+}
+.menu {
+    margin-top: 5px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px;
+}
+.menu li {
+    font-size: 14px;
+}
+.menu a {
+    padding: 5px 10px;
+    font-weight: 500;
+    color: #777;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.menu a.active {
+    color: #1a73e8; 
+    font-weight: bold;
+    border-bottom: 2px solid #1a73e8;
+}
+
+.search {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    position: relative;
+    background: #f0f0f0;
+}
+.beforetext{
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png');
+    background-size: contain;
+    pointer-events: none;
+}
+
+
+.search input[type="text"] {
+    width: 100%;
+    height: 100%;
+    padding: 5px 8px;
+    padding-left: 40px;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 15px;
+}
+
+.search input[type="text"]:focus {
+    background: #fff;
+    border-color: #ccc;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+
+.search input[type="text"]::placeholder {
+    color: #888;
+}
+
+.search input[type="text"]:focus::placeholder {
+    color: transparent;
+}
+
+.logIn button {
+    padding: 5px 10px;
+    background: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .logIn button:hover {
+    background: #005bb5;
+  }
+
+  .banner_1 {
+    position: relative; /* 내부 요소가 절대 위치할 수 있도록 설정 */
+    width: 100%;
+    max-width: 1200px;
+    height: 300px;
+    margin: 110px auto 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.banner_1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.banner_1-text {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.banner_1-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banner_1-text p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.banner_1-text button {
+    padding: 10px 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.banner_1-text button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.cate {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.cate-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+    height: 60px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background: #e0e0e0; 
+    transition: background 0.3s;
+}
+
+.cate-card.shopping {
+    background: #d3e3fd;
+}
+.cate-card.entertainment {
+    background: #e3e3e3;
+}
+.cate-card.tools {
+    background: #d3e3fd;
+}
+.cate-card.art {
+    background: #c4eed0;
+}
+.cate-card.accessibility {
+    background: #c7c7c7;
+}
+
+.cate-card.shopping:hover {
+    background: #a8c7fa;
+}
+.cate-card.entertainment:hover {
+    background: #c7c7c7;
+}
+.cate-card.tools:hover {
+    background: #7fcfff;
+}
+.cate-card.art:hover {
+    background: #6dd58c;
+}
+.cate-card.accessibility:hover {
+    background: #ababab;
+}
+
+
+.cate-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.cate-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.cate-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.rec {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: left;
+    font-family: 1.75rem;
+}
+.rec h2{
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    width: 250px;
+    padding: 15px;
+    background: #eff2ef;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h5 {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 0 3px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card p {
+    padding:  0 3px;
+    text-align: left;
+    font-size: 13px;
+    color: #555;
+}
+.banner_2 {
+    position: relative; 
+    width: 100%;
+    max-width: 1200px;
+    height: 300px;
+    margin: 50px auto 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #d4ffa1;
+}
+
+.banner_2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.banner_2-text {
+    position: absolute;
+    top: 50%;
+    left: 15%; 
+    transform: translateY(-50%);
+    color: #374151;
+    text-align: left;
+    z-index: 1;
+}
+
+.banner_2-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banner_2-text p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.banner_2-text button {
+    padding: 10px 20px;
+    border: 2px solid #374151;
+    background: transparent;
+    color: #374151;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.banner_2-text button:hover {
+    background: rgba(55, 65, 81, 0.1);
+}
+
+.footer {
+    background: #f5f5f5; 
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #e3e3e3;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* 푸터 높이 */
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px; 
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.footer-links li {
+    display: inline-block;
+}
+
+.footer-links a {
+    color: #5c5f5e;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #1a73e8; 
+    text-decoration: underline;
+}
+
+.lmenu {
+    position: fixed;
+    top: 110px; 
+    left: 0;
+    width: 250px;
+    background: #f5f5f5;
+    padding: 50px;
+    height: calc(100vh - 110px);
+    border-right: 1px solid #ddd;
+}
+
+.lmenu ul li{
+    padding: 5px;
+}
+.content {
+    margin-left: 270px; 
+    padding: 110px;
+}
+
+.banner-them {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.banner-them img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.rec-them {
+    margin-top: 30px;
+}
+
+.rec-them p{
+    font-size: 13px;
+    margin-bottom: 20px;
+}

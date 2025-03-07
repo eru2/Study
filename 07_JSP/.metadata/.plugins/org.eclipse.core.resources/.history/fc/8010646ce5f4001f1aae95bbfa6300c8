@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="selectListCount">
+	SELECT *
+	FROM NOTICE
+	WHERE STATUS = 'Y'
+</entry>
+
+<entry key="selectList">
+	SELECT NOTICE_NO,
+		   NOTICE_TITLE,
+		   MEMBER_ID,
+		   COUNT,
+		   TO_CHAR(CREATE_DATE, 'YYYY.MM.DD') AS "CREATE_DATE"
+	WHERE NOTICE
+	JOIN MEMBER ON (NOTICE_WRITER = MEMBER_ID)
+</entry>
+
+</properties>

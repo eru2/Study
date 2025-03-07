@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 외부라이브러리 -->
+    <!-- jQuery 3.7.1 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- jQueryUI 1.14.1 -->
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
+        integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+
+    <style>
+        .area {
+            border: 1px solid black;
+            width: 500px;
+            height: 250px;
+        }
+
+        .area>li {
+            padding: 5px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="wrap">
+        <form action="">
+            <fieldset class="area">
+                <legend>구매정보</legend>
+                <li>구매자 : <input type="text" placeholder="구매자의 이름을 입력하세요" id="name"></li>
+                <li>상품명 : <input type="text" placeholder="구매 상품 명을 입력하세요." id="product"></li>
+                <li>가격 : <input type="text" placeholder="구매 가격을 입력하세요" id="price"></li>
+                <li>구매 수량 : <input type="number" placeholder="최소 10" max="100" min="10" id="num"></li>
+                <li>납품 등급 : <input type="range" max="9" min="1" step="2" id="range"></li>
+                <li>기타 사항 : <textarea id="ex"></textarea></li>
+            </fieldset>
+            <br>
+            <input type="button" id="submit" value="입력 값 출력하기">
+        </form>
+        <br>
+        <div class="area" id="print">
+        </div>
+    </div>
+
+    <script>
+        $(":button").click(function (event) {
+            const name = document.getElementById("name").value;
+            const product = document.getElementById("product").value;
+            const price = document.getElementById("price").value;
+            const nember = document.getElementById("num").value;
+            const rang = document.getElementById("range").value;
+            const extra = document.getElementById("ex").value;
+            const print = document.getElementById("print");
+
+            print.innerHTML = "구매자 명 : " + name + "<br>" + "상품 명 : " + product + "<br>" + "가격 : "
+                + price + "<br>" + "구매 수량 : " + num + "<br>" + "납품등급 : " + range + "<br>"
+                + "기타사항 : " + extra + "<br>";
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.outer {
+	background: blanchedalmond;
+	color: black;
+	width: 1000px;
+	margin: auto;
+	margin-top: 50px;
+	padding: 10px 0px 50px;
+}
+
+.list-area {
+	border: 1ps solid brown;
+	text-align: center;
+}
+
+.list-area td, .list-area th {
+	border: 1px solid brown;
+}
+
+.list-area select, .list-area input, .list-area textarea {
+	width: 100%;
+	box-sizing: border-box;
+	color: black;
+}
+</style>
+</head>
+<body>
+	<%@ include file="../common/menubar.jsp"%>
+
+	<div class="outer">
+		<br>
+		<h2 align="center">일반게시글 상세보기</h2>
+		<br>
+		<%--
+			파일을 전송하기위해서는 enctype="multipart/form-data"
+			기본적인 form전송시 인코딩 타입 -> application/x-www-form-urlencoded
+		 --%>
+
+		<table align="center" class="list-area">
+			<tr>
+				<th width="70">카테고리</th>
+				<td width="70">${board.categoryName}</td>
+				<th width="70">제목</th>
+				<td width="350">${board.boardTitle}</td>
+			</tr>
+
+			<tr>
+				<th>작성자</th>
+				<td>${board.userId}</td>
+				<th>작성일</th>
+				<td>${board.createDate}</td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td colspan="3">
+					<p style="height: 200;">${board.boardContent}.</p>
+				</td>
+			</tr>
+			<tr>
+				<th>첨부파일</th>
+				<td colspan="3">
+				<c:choose>
+					<c:when test="${empth attachment}">
+					첨부파일이 없습니다.
+					</c:when>
+					<c:otherwise>
+						${attachment.originName }
+					</c:otherwise>
+					<a href="${pageContext.request.contextPath}/${attachment.filePath">${attachment.originName}</a>
+				</c:choose>
+				</td>
+			</tr>
+		</table>
+
+		<br>
+
+		<div align="center">
+			<a href="" class="btn btn-sm-light">목록가기</a> <a href=""
+				class="btn btn-sm-light">수정하기</a> <a href=""
+				class="btn btn-sm-light">삭제하기</a>
+		</div>
+
+	</div>
+</body>
+</html>

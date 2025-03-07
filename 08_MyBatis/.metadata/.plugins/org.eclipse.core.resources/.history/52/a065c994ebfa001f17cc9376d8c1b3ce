@@ -1,0 +1,23 @@
+package com.kh.mybatis.board.service;
+
+import java.util.ArrayList;
+
+import com.kh.mybatis.board.model.vo.Board;
+import com.kh.mybatis.common.PageInfo;
+
+public class BoardServiceImpl implements BoardService{
+
+	@Override
+	public int selectListCount() {
+		
+		return 0;
+	}
+
+	@Override
+	public ArrayList<Board> selectList(PageInfo p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

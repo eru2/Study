@@ -1,0 +1,13 @@
+package com.kh.mybatis.board.model.vo;
+
+public class Reply {
+	
+	private int replyNo;
+	private String replyContent;
+	private int refBoardNo;
+	private int replyWriter;
+	private String createDate;
+	private String status;
+	
+	private String userId;
+}

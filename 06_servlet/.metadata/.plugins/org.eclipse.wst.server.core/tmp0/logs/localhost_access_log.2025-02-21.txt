@@ -1,0 +1,13 @@
+127.0.0.1 - - [21/Feb/2025:09:18:55 +0900] "GET / HTTP/1.1" 404 808
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:19:01 +0900] "GET /servlet/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:19:01 +0900] "GET /favicon.ico HTTP/1.1" 404 819
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:19:06 +0900] "GET /servlet/views/request_get.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:21:06 +0900] "GET /servlet/gettest.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=50&gender=M&city=%EC%84%9C%EC%9A%B8&height=180&food=%ED%95%9C%EC%8B%9D&food=%EC%9D%BC%EC%8B%9D HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:22:09 +0900] "GET /servlet/gettest.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=50&gender=M&city=%EC%84%9C%EC%9A%B8&height=195&food=%ED%95%9C%EC%8B%9D&food=%EC%9D%BC%EC%8B%9D HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:35:19 +0900] "GET /servlet/views/request_get.html HTTP/1.1" 200 2843
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:35:19 +0900] "GET /favicon.ico HTTP/1.1" 404 819
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:35:36 +0900] "GET /servlet/gettest.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=50&gender=M&city=%EA%B2%BD%EA%B8%B0&height=194&food=%ED%95%9C%EC%8B%9D&food=%EC%A4%91%EC%8B%9D HTTP/1.1" 200 183
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:36:09 +0900] "GET /servlet/gettest.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=50&gender=M&city=%EA%B2%BD%EA%B8%B0&height=194&food=%ED%95%9C%EC%8B%9D&food=%EC%A4%91%EC%8B%9D HTTP/1.1" 200 183
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:36:12 +0900] "GET /servlet/views/request_get.html HTTP/1.1" 200 2843
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:36:12 +0900] "GET /favicon.ico HTTP/1.1" 404 819
+0:0:0:0:0:0:0:1 - - [21/Feb/2025:09:36:19 +0900] "GET /servlet/gettest.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=50&gender=M&city=%EC%84%9C%EC%9A%B8&height=180&food=%ED%95%9C%EC%8B%9D&food=%EC%A4%91%EC%8B%9D HTTP/1.1" 200 204
