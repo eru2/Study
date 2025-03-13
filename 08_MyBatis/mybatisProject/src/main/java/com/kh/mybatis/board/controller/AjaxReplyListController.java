@@ -36,7 +36,7 @@ public class AjaxReplyListController extends HttpServlet {
 		BoardService boardService = new BoardServiceImpl();
 		int boardNo = Integer.parseInt(request.getParameter("bno"));
 		//서버로부터 댓글목록가져오기
-		ArrayList<Reply> list = BoardService.selectReplyList(boardNo);
+		ArrayList<Reply> list = boardService.selectReplyList(boardNo);
 		
 //		response.setContentType("text/html; charset=utf-8");
 		response.setContentType("application/json; charset=utf-8");

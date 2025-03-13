@@ -79,4 +79,10 @@ public class BoardServiceImpl implements BoardService{
 		return insertReply;
 	}
 
+	@Override
+	public ArrayList<Reply> selectReplyList(int boardNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

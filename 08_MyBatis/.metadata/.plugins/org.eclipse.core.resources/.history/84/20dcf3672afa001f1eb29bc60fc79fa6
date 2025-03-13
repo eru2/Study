@@ -1,8 +1,0 @@
-package mappers;
-
-public class Snippet {
-	public static void main(String[] args) {
-		org.mybatis.example.BlogMapper
-	}
-}
-

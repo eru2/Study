@@ -15,4 +15,5 @@ public interface BoardService {
 	int increaseCount(int boardNo);
 	Board selectBoard(int boardNo);
 	int insertReply(Reply r);
+	ArrayList<Reply> selectReplyList(int boardNo);
 }

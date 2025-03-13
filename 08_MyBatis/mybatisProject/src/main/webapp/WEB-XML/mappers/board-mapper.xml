@@ -116,4 +116,16 @@
 			${r.userId}
 		)
  	</insert>
+ 	<select id="selectReplyList" resultType="Reply">
+ 		SELECT REPLY_NO,
+				REPLY_CONTENT,
+				USER_ID,
+				R.CREATE_DATE
+ 		  FROM REPLY R
+ 		  JOIN MEMBER ON(REPLY_WRITER = USER_NO)
+ 		  JOIN BOARD ON(BOARD_NO = REF_BNO)
+ 		 WHERE R.STATUS = 'Y' 
+ 		   AND BOARD_NO = '${boardNo}'
+
+ 	</select>
 </mapper>
