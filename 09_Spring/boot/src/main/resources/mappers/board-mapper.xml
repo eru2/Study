@@ -4,6 +4,19 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kh.boot.mappers.BoardMapper">
 
+    <resultMap id="attachmentResult" type="Attachment">
+        <result column="FILE_NO" property="fileNo"/>
+        <result column="REF_BNO" property="refBno"/>
+        <result column="BOARD_WRITER" property="boardWriter"/>
+        <result column="BOARD_TITLE" property="boardTitle"/>
+        <result column="ORIGIN_NAME" property="originName"/>
+        <result column="CHANGE_NAME" property="changeName"/>
+        <result column="FILE_PATH" property="filePath"/>
+        <result column="COUNT" property="count"/>
+        <result column="UPLOAD_DATE" property="uploadDate"/>
+        <result column="FILE_LEVEL" property="fileLevel"/>
+        <result column="STATUS" property="status"/>
+    </resultMap>
     <resultMap id="boardResult" type="Board">
         <result column="BOARD_NO" property="boardNo"/>
         <result column="BOARD_TITLE" property="boardTitle"/>
@@ -21,6 +34,8 @@
         <result column="REPLY_WRITER" property="replyWriter"/>
         <result column="CREATE_DATE" property="createDate"/>
     </resultMap>
+
+
     <select id="selectBoardCount" resultType="_int">
         SELECT COUNT(*)
         FROM BOARD
@@ -124,7 +139,63 @@
         CHANGE_NAME = #{changeName}
         WHERE BOARD_NO = #{boardNo}
     </update>
-    <select id="selectThumbnailList" resultMap="boardResult">
-        SELECT 
+
+    <select id="selectThmbnailBoardCount" resultType="int">
+        SELECT COUNT(*)
+        FROM ATTACHMENT
+        WHERE STATUS = 'Y'
     </select>
+
+    <select id="selectThumbnailList" resultMap="attachmentResult">
+        SELECT
+        B.BOARD_NO,
+        A.BOARD_TITLE,
+        A.BOARD_WRITER,
+        A.ORIGIN_NAME,
+        A.COUNT,
+        FILE_PATH || A.CHANGE_NAME AS "THUMBNAIL_IMG",
+        TO_CHAR(A.UPLOAD_DATE, 'YYYY-MM-DD') AS UPLOAD_DATE
+        FROM ATTACHMENT A
+        JOIN BOARD B ON (A.REF_BNO = B.BOARD_NO)
+        WHERE A.STATUS = 'Y'
+        ORDER BY B.BOARD_NO DESC
+    </select>
+
+<!--  수정 필요 -->
+    <insert id="insertAttachment">
+        INSERT
+        INTO ATTACHMENT(
+        FILE_NO,
+        BOARD_TITLE,
+        BOARD_WRITER,
+        BOARD_CONTENT,
+        ORIGIN_NAME,
+        CHANGE_NAME
+        ) VALUES (
+        SEQ_BNO.NEXTVAL,
+        #{boardTitle},
+        #{boardWriter},
+        #{boardContent},
+        #{originName},
+        #{changeName}
+        )
+    </insert>
+
+    <select id="selectAttachmentList" resultMap="attachmentResult">
+        SELECT BOARD_NO,
+            BOARD_TITLE,
+            COUNT,
+            FILE_PATH || CHANGE_NAME AS "THUMBNAIL_IMG"
+        FROM ATTACHMENT
+        AND STATUS = 'Y'
+        AND FILE_LEVEL = 1
+        ORDER BY BOARD_NO DESC
+    </select>
+
+    <update id="deleteBoard">
+        UPDATE BOARD
+        SET STATUS = 'N',
+        MODIFY_DATE = SYSDATE
+        WHERE BOARD_NO = #{bno}
+    </update>
 </mapper>

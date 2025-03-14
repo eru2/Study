@@ -1,5 +1,6 @@
 package com.kh.boot.service;
 
+import com.kh.boot.domain.vo.Attachment;
 import com.kh.boot.domain.vo.Board;
 import com.kh.boot.domain.vo.PageInfo;
 import com.kh.boot.domain.vo.Reply;
@@ -25,6 +26,15 @@ public interface BoardService {
     ArrayList<Board> getBoardTopN(String order, int limit);
     //게시글 수정
     int updateBoard(Board board);
+    //사진 게시판 게시글 수
+    int selectThmbnailBoardCount();
+    //사진게시른 정보(페이징)
+    ArrayList<Attachment> selectThumbnailList(PageInfo pi);
 
-    ArrayList<Board> selectThumbnailList(PageInfo pi);
+    int deleteBoard(int boardNo);
+
+    ArrayList<Attachment> selectAttachmentList(int boardNo);
+
+    int insertAttachment(Attachment attachment);
+
 }

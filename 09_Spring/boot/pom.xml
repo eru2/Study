@@ -3,7 +3,7 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<!--
-			Maven프로젝트의 설정파일로 의존성관리, 빌드설정, 프로젝트 정보등을 관리하는 역할
+			Maven플로젝트의 설정파일로 의존성관리, 빌드설정, 프로젝트 정보등을 관리하는 역할
 	-->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -97,7 +97,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
 
 
 	</dependencies>

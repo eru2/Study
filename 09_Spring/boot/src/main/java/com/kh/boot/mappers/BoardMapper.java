@@ -1,5 +1,6 @@
 package com.kh.boot.mappers;
 
+import com.kh.boot.domain.vo.Attachment;
 import com.kh.boot.domain.vo.Board;
 import com.kh.boot.domain.vo.Reply;
 import org.apache.ibatis.annotations.Mapper;
@@ -25,5 +26,13 @@ public interface BoardMapper {
     //게시글 수정
     int updateBoard(Board board);
 
-    ArrayList<Board> selectThumbnailList(RowBounds rowBounds);
+    int selectThmbnailBoardCount();
+    //사진게시글 목록 조회
+    ArrayList<Attachment> selectThumbnailList(RowBounds rowBounds);
+
+    int deleteBoard(@Param("bno") int boardNo);
+
+    ArrayList<Attachment> selectAttachmentList(@Param("boardNo") int boardNo);
+
+    int insertAttachment(Attachment attachment);
 }

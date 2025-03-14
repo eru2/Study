@@ -1,5 +1,6 @@
 package com.kh.boot.service;
 
+import com.kh.boot.domain.vo.Attachment;
 import com.kh.boot.domain.vo.Board;
 import com.kh.boot.domain.vo.PageInfo;
 import com.kh.boot.domain.vo.Reply;
@@ -7,6 +8,7 @@ import com.kh.boot.mappers.BoardMapper;
 import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 
@@ -53,6 +55,7 @@ public class BoardServiceImpl implements BoardService {
         return boardMapper.selectReplyList(boardNo);
     }
 
+    @Transactional
     @Override
     public ArrayList<Board> getBoardTopN(String order, int limit) {
         RowBounds rowBounds = new RowBounds(0, limit);
@@ -65,10 +68,30 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public ArrayList<Board> selectThumbnailList(PageInfo pi) {
+    public int selectThmbnailBoardCount() {
+        return boardMapper.selectThmbnailBoardCount();
+    }
+
+    @Override
+    public ArrayList<Attachment> selectThumbnailList(PageInfo pi) {
         int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
         RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
         return boardMapper.selectThumbnailList(rowBounds);
+    }
+
+    @Override
+    public int deleteBoard(int boardNo) {
+        return boardMapper.deleteBoard(boardNo);
+    }
+
+    @Override
+    public ArrayList<Attachment> selectAttachmentList(int boardNo) {
+        return boardMapper.selectAttachmentList(boardNo);
+    }
+
+    @Override
+    public int insertAttachment(Attachment attachment) {
+        return boardMapper.insertAttachment(attachment);
     }
 
 
